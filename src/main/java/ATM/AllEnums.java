@@ -3,7 +3,7 @@ package ATM;
 /**
  * Created by castro on 9/16/16.
  */
-public class ALLENUMD {
+public class AllEnums {
 
     public  enum AccountStatus{OPEN,CLOSE,FROZEN}
     public  enum TransactionAprovedorDenied{APPROVED,DENIED}

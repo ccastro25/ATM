@@ -7,39 +7,40 @@ public class Bank {
     private UserManager userManger = new UserManager();
     private AccountManager accountManager = new AccountManager();
     private TransactionManager transactionManger = new TransactionManager();
-    private InputHander inputHander = new InputHander();
+    private double checkingIntrestRate = 2.3;
+    private double savingIntrestRate = 2.1;
+    private double InvestmentIntrestRate = 2.1;
 
-    private ALLENUMD allenumd;
+
+
+    private AllEnums allenumd;
 
     public UserManager getUserManger() {
         return userManger;
     }
 
-    public void setUserManger(UserManager userManger) {
-        this.userManger = userManger;
-    }
 
     public AccountManager getAccountManager() {
         return accountManager;
     }
 
-    public void setAccountManager(AccountManager accountManager) {
-        this.accountManager = accountManager;
-    }
 
     public TransactionManager getTransactionManger() {
         return transactionManger;
     }
 
-    public void setTransactionManger(TransactionManager transactionManger) {
-        this.transactionManger = transactionManger;
+
+
+    public double getCheckingIntrestRate() {
+        return checkingIntrestRate;
     }
 
-    public InputHander getInputHander() {
-        return inputHander;
+    public double getSavingIntrestRate() {
+        return savingIntrestRate;
     }
 
-    public void setInputHander(InputHander inputHander) {
-        this.inputHander = inputHander;
+    public double getInvestmentIntrestRate() {
+        return InvestmentIntrestRate;
     }
+
 }

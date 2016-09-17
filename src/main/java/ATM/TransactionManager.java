@@ -1,29 +1,36 @@
 package ATM;
 
+import org.omg.PortableInterceptor.INACTIVE;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
  * Created by castro on 9/16/16.
  */
-public class TransactionManager extends ALLENUMD{
+public class TransactionManager  {
 
-    private HashMap<String,ArrayList> UsersAccounts = new HashMap<String, ArrayList>();
+    private HashMap<Integer, ArrayList> usersAccounts = new HashMap<Integer, ArrayList>();
+
+       public TransactionManager(){
 
 
-    protected void withdraw(){
+
+       }
+    public HashMap getTransactionManager(){
+
+        return usersAccounts;
+
 
     }
 
-    public void createTransaction(){
 
-
-
-
-
-    }
+    public void createTransaction(){}
 
     public int getID(){
+
         return 0;
     }
 }
+
+

@@ -10,12 +10,24 @@ public class AccountManager {
 
 protected HashMap<String,ArrayList> accounts = new HashMap<String, ArrayList>();
 
-    public  HashMap getAccount(){
+
+    public AccountManager(){
+
+    }
+
+
+    public  HashMap getAccounts(){
+
+        return accounts;
+    }
+    public  BankAccount getAccount(){
+
         return null;
     }
     public void closeAccount(){}
 
-    public void createAccount(){}
+    public void openAccountManager(){}
+
 
 
 }

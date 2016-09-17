@@ -1,41 +1,39 @@
 package ATM;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 /**
  * Created by castro on 9/16/16.
  */
 public class BankAccount{
 
 
-    protected int balance;
+    private double balance;
 
 
 
-    protected ALLENUMD.AccountStatus OpenClosedOrFrozen;
-    protected static int accountNumber=1;
-    protected int accountCounter;
-    protected String accountHolderName;
-    protected int IntrestRate;
+    private AllEnums.AccountStatus OpenClosedOrFrozen;
+    private int accountNumber;
+    private static int accountCounter;
+    private String accountHolderName;
+    private int IntrestRate;
 
 
-private BankAccount(String accountHolderName,ALLENUMD savingCheckingOrInvesment){
+public BankAccount(String accountHolderName, AllEnums savingCheckingOrInvesment){
 
 
 
 
- OpenClosedOrFrozen= ALLENUMD.AccountStatus.OPEN;
+ OpenClosedOrFrozen= AllEnums.AccountStatus.OPEN;
     accountNumber=accountNumber++;
 }
 
 
 
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
@@ -72,11 +70,11 @@ private BankAccount(String accountHolderName,ALLENUMD savingCheckingOrInvesment)
     }
 
 
-    public ALLENUMD.AccountStatus getOpenClosedOrFrozen() {
+    public AllEnums.AccountStatus getOpenClosedOrFrozen() {
         return OpenClosedOrFrozen;
     }
 
-    public void setOpenClosedOrFrozen(ALLENUMD.AccountStatus openClosedOrFrozen) {
+    public void setOpenClosedOrFrozen(AllEnums.AccountStatus openClosedOrFrozen) {
         OpenClosedOrFrozen = openClosedOrFrozen;
     }
 }
