@@ -5,9 +5,9 @@ package ATM;
  */
 public class AllEnums {
 
-    public  enum AccountStatus{OPEN,CLOSE,FROZEN}
+    public  enum AccountOpenClosedOrFrozen {OPEN,CLOSE,FROZEN}
     public  enum TransactionAprovedorDenied{APPROVED,DENIED}
-    public  enum TransactionTypes{DEBIT,CREDIT}
+    public  enum CreditedOrDebited {DEBITED,CREDITED}
     public  enum AccounType{SAVING,CHECKING,INVESTMENT}
 
 

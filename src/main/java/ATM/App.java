@@ -7,7 +7,9 @@ public class App {
 
     public static void main(String[] args) {
 
-
-        InputHander inputHander = new InputHander();
+        Display display = new Display();
+       InputHandler inputHandler =new InputHandler();
+        display.welcomeMessage();
+        inputHandler.start();
     }
 }

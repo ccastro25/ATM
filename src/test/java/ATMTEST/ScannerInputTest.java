@@ -7,7 +7,11 @@ public class ScannerInputTest {
 
 
 
-    public void
+    public void getInputTest(){
+
+
+
+    }
 
 
 }

@@ -10,13 +10,27 @@ public class ScannerInputHandler {
 
 
 
-    Scanner userInput = new Scanner(System.in);
+  private   Scanner scanner = new Scanner(System.in);
 
-    String input;
-
-    public String getInput(){
+    private String userINput;
 
 
-        return null
-    }
+    public void setUserStringNOSpaces(){
+     userINput = scanner.next();}
+
+
+     public void setUserStringCanHaveSpaces(){
+
+         userINput = scanner.nextLine();
+     }
+
+     public String getUserStringInput(){
+
+      return userINput;
+     }
+
+
+
+
+    public String getUserINput() {return userINput;}
 }

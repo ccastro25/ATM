@@ -43,38 +43,5 @@ public Transaction(double amount, AllEnums.AccounType transactionTypes){
 
 
 
-    public AllEnums.TransactionAprovedorDenied withraw(BankAccount accountToWithDrawForm) {
-
-
-
-        if(amount< accountToWithDrawForm.getBalance())
-        {amount = accountToWithDrawForm.getAccountCounter()-amount;
-        accountToWithDrawForm.setBalance(amount);
-        approvedorDenied = AllEnums.TransactionAprovedorDenied.APPROVED;
-        }
-        else {
-            approvedorDenied = AllEnums.TransactionAprovedorDenied.DENIED;
-        }
-
-
-     return
-    }
-
-
-
-
-    protected AllEnums.TransactionAprovedorDenied deposit(BankAccount accountToAddTo) {
-
-    }
-
-    protected void transfer(BankAccount accountThatsBeingDebitted){
-
-
-
-
-
-
-
-    }
 
 }

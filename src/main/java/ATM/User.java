@@ -1,35 +1,29 @@
 package ATM;
 
+import java.util.ArrayList;
+
 /**
  * Created by castro on 9/16/16.
  */
 public class User {
 
-    private int pin;
-    private  static int userId;
-    private String accountHoldersName;
+    private String username;
+    private String password;
 
-    public int getPin() {
-        return pin;
+    public void setUsername(String username){
+        this.username = username;
+    }
+    public void setPassword(String password){
+        this.password = password;
     }
 
-    public void setPin(int pin) {
-        this.pin = pin;
+    public String getUsername() {
+        return username;
+    }
+    public String getPassword(){
+        return password;
     }
 
-    public int getUserId() {
-        return userId;
-    }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public String getAccountHoldersName() {
-        return accountHoldersName;
-    }
-
-    public void setAccountHoldersName(String accountHoldersName) {
-        this.accountHoldersName = accountHoldersName;
-    }
 }
+

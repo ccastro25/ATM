@@ -7,19 +7,33 @@ import java.util.HashMap;
  */
 public class UserManager {
 
-    private HashMap<Integer,String> user = new HashMap<Integer, String>();
+    private HashMap<String, String> userNameAndPassword = new HashMap<String, String>();
 
+    private AllEnums.AccountOpenClosedOrFrozen accountOpenCloseFrozen;
 
+    private AllEnums.AccounType accountType;
 
-public  int createPassword(){
-    return 0;
-}
-protected String createUser;
+    public UserManager(){
+    }
 
-    protected  void createUser (){}
-    protected void getID(){}
-    protected String  getUser(){return "";}
-    protected HashMap getUserMap(){return null;}
+    public void setUserNameAndPassword(User userName, User password){
+        userNameAndPassword.put(userName.getUsername(), password.getPassword());
+    }
+    public HashMap<String, String> getUserNameAndPassword(){
+        return userNameAndPassword;
+    }
+    public void setOpenCloseFrozen(AllEnums.AccountOpenClosedOrFrozen accountOpenCloseFrozen){
+        this.accountOpenCloseFrozen = accountOpenCloseFrozen;
+    }
+    public AllEnums.AccountOpenClosedOrFrozen getOpenCloseFrozen(){
+        return accountOpenCloseFrozen;
+    }
+    public void setAccountType(AllEnums.AccounType accountType) {
+        this.accountType = accountType;
+    }
+    public AllEnums.AccounType getAccountType(){
+        return accountType;
+    }
 
 
 }

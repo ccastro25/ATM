@@ -5,24 +5,36 @@ package ATM;
  */
 public class BankAccount{
 
+   private AllEnums.AccountOpenClosedOrFrozen accountOpenClosedOrFrozen;
+   private AllEnums.AccounType savingCheckingOrInvesment;
 
     private double balance;
-
-
-
-    private AllEnums.AccountStatus OpenClosedOrFrozen;
     private int accountNumber;
     private static int accountCounter;
     private String accountHolderName;
-    private int IntrestRate;
+    private double checkingIntrestRate = 2.3;
+    private double savingIntrestRate = 2.1;
+    private double investmentIntrestRate = 2.1;
+    private double accountIntrest;
 
 
-public BankAccount(String accountHolderName, AllEnums savingCheckingOrInvesment){
+public BankAccount(String accountHolderName, AllEnums.AccounType savingCheckingOrInvesment, double balance){
+
+    switch (savingCheckingOrInvesment){
+
+        case SAVING:
+            accountIntrest= savingIntrestRate;
+        case CHECKING:
+           accountIntrest =checkingIntrestRate;
+        case INVESTMENT:
+            accountIntrest= investmentIntrestRate;
+    }
 
 
 
-
- OpenClosedOrFrozen= AllEnums.AccountStatus.OPEN;
+    this.accountHolderName =accountHolderName;
+    this.savingCheckingOrInvesment = savingCheckingOrInvesment;
+    accountOpenClosedOrFrozen= AllEnums.AccountOpenClosedOrFrozen.OPEN;
     accountNumber=accountNumber++;
 }
 
@@ -61,20 +73,19 @@ public BankAccount(String accountHolderName, AllEnums savingCheckingOrInvesment)
         this.accountHolderName = accountHolderName;
     }
 
-    public int getIntrestRate() {
-        return IntrestRate;
+
+    public double getAccountIntrest() {
+        return accountIntrest;
     }
 
-    public void setIntrestRate(int intrestRate) {
-        IntrestRate = intrestRate;
+    public AllEnums.AccountOpenClosedOrFrozen getOpenClosedOrFrozen() {
+        return accountOpenClosedOrFrozen;
+    }
+
+    public void setOpenClosedOrFrozen(AllEnums.AccountOpenClosedOrFrozen openClosedOrFrozen) {
+        accountOpenClosedOrFrozen = openClosedOrFrozen;
     }
 
 
-    public AllEnums.AccountStatus getOpenClosedOrFrozen() {
-        return OpenClosedOrFrozen;
-    }
 
-    public void setOpenClosedOrFrozen(AllEnums.AccountStatus openClosedOrFrozen) {
-        OpenClosedOrFrozen = openClosedOrFrozen;
-    }
 }
