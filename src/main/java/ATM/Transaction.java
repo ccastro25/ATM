@@ -12,16 +12,22 @@ public class Transaction {
     private double amount;
     private double balanceAfterTransaction;
     private static int trantionID;
-    private AllEnums.AccounType transactionType;
+    private AllEnums.CreditedOrDebited creditedOrDebited;
     private AllEnums.TransactionAprovedorDenied approvedorDenied;
 
 
+    public AllEnums.CreditedOrDebited getCreditedOrDebited() {
+        return creditedOrDebited;
+    }
 
+    public AllEnums.TransactionAprovedorDenied getApprovedorDenied() {
+        return approvedorDenied;
+    }
 
-public Transaction(double amount, AllEnums.AccounType transactionTypes){
+    public Transaction(double amount, AllEnums.CreditedOrDebited creditedOrDebited){
 
     this.amount = amount;
-    this.transactionType = transactionTypes;
+    this.creditedOrDebited = creditedOrDebited;
 
 }
 
@@ -42,6 +48,24 @@ public Transaction(double amount, AllEnums.AccounType transactionTypes){
     }
 
 
+public AllEnums.TransactionAprovedorDenied debit(){
+
+    return null;
+
+}
+
+
+public AllEnums.TransactionAprovedorDenied credit(){
+
+
+    return null;
+}
+
+public AllEnums.TransactionAprovedorDenied transfer(){
+
+
+    return null;
+}
 
 
 }

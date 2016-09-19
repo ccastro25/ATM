@@ -12,11 +12,7 @@ public class TransactionManager  {
 
     private HashMap<Integer, ArrayList> usersAccounts = new HashMap<Integer, ArrayList>();
 
-       public TransactionManager(){
-
-
-
-       }
+       public TransactionManager(){}
     public HashMap getTransactionManager(){
 
         return usersAccounts;

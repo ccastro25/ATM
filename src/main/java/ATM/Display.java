@@ -16,13 +16,14 @@ public class Display {
     private String typeOfAccountToOpen = "what type of acount do you want ot open";
     private String accessGrantedorDenied ="your acces has been ";
     private String accountHasbeenOpenClosedOrFrozen = "Your account has been...";
-    private String checkAllBalanceMessage = "Would you like to Check all of your Accounts ";
+    private String checkAllBalanceMessage = "to Check all of your Accounts enter 011";
     private String transactionTypeMessage ="Your account has been...in this amount ";
     private String balanceMessage = "Your remaining Balance is...";
     private String accountChoice = "Please choose an account, to pick savings enter 1, to pick checking enter 2, to pick investment enter 3 ";
-    private String accountTransaction = "Do you want to Check Balance enter 8, Make a transfer enter 7, ";
-    private String exitOrGoback = "Enter 9 to the last window, 0 to exit ";
+    private String accountTransaction = "to Check all balances enter 8, to a debit or credit enter 7, ";
+    private String exitOrGoback = "Enter 9 to go back to the last options or  0 to exit ";
     private String moneySign = " $";
+    private String errorMessage = "Error please try again";
 
 
 
@@ -38,8 +39,8 @@ public class Display {
     public void AcountHasBeenDebitedOrCreditedMessage(AllEnums.CreditedOrDebited creditedOrDebited, double amount){System.out.println(transactionTypeMessage+creditedOrDebited+moneySign+amount);}
     public void BalanceMessage(double amount){System.out.println(balanceMessage+moneySign+amount);}
     public void accountChoiceDMessage(){System.out.println(accountChoice);}
-    public void setAccountTransactionMessage(){System.out.println(accountTransaction);}
-    public void setExitOrGobackMessage(){System.out.println(exitOrGoback);}
-   // public void (){System.out.println(typeOfAccountToOpen);}
+    public void getAccountTransactionMessage(){System.out.println(accountTransaction);}
+    public void getExitOrGobackMessage(){System.out.println(exitOrGoback);}
+   public void ErrorMessage(){System.out.println(errorMessage);}
    // public void (){System.out.println();}
 }

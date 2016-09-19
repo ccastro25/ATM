@@ -8,7 +8,7 @@ public class App {
     public static void main(String[] args) {
 
         Display display = new Display();
-       InputHandler inputHandler =new InputHandler();
+       Bank inputHandler =new Bank();
         display.welcomeMessage();
         inputHandler.start();
     }
