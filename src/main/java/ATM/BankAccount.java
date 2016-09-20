@@ -10,7 +10,7 @@ public class BankAccount{
 
     private double balance;
     private int accountNumber;
-    private static int accountCounter;
+    private static int accountCounter=0;
     private String accountHolderName;
     private double checkingIntrestRate = 2.3;
     private double savingIntrestRate = 2.1;
@@ -44,7 +44,7 @@ public class BankAccount{
     this.accountHolderName =accountHolderName;
     this.savingCheckingOrInvesment = savingCheckingOrInvesment;
     accountOpenClosedOrFrozen= AllEnums.AccountOpenClosedOrFrozen.OPEN;
-    accountNumber=accountNumber++;
+   accountNumber= accountCounter++;
 }
 
 
@@ -95,6 +95,8 @@ public class BankAccount{
         accountOpenClosedOrFrozen = openClosedOrFrozen;
     }
 
-
+    public AllEnums.AccounType getAccountType() {
+        return savingCheckingOrInvesment;
+    }
 
 }

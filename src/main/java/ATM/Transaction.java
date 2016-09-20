@@ -1,5 +1,7 @@
 package ATM;
 
+import sun.awt.FullScreenCapable;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -30,6 +32,9 @@ public class Transaction {
 
         return transactionAprovedorDenied;
     }
+
+
+
 
 
     public AllEnums.TransactionAprovedorDenied credit(BankAccount bankAccount, double amountToAdd) {
