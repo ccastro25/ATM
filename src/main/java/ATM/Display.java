@@ -12,15 +12,15 @@ public class Display {
     private String fullName = "Enter your fullName";
     private String usernameMessage = "Please enter your UserName ";
     private String passwordMessage = "Please enter your Password ";
-    private String secondpasswordMessage = "Please enter your Reenter Password ";
-    private String typeOfAccountToOpen = "what type of acount do you want ot open";
+    private String typeOAccount = "what type of account would you like make. for saving enter 1, for checking enter 2 and enter 3 for Investment.";
+    private String Enterbalance = "Enter your starting amount? ";
     private String accessGrantedorDenied ="your acces has been ";
     private String accountHasbeenOpenClosedOrFrozen = "Your account has been...";
-    private String checkAllBalanceMessage = "to Check all of your Accounts enter 011";
+    private String checkAllBalanceMessage = "to Check all of your Accounts enter 6";
     private String transactionTypeMessage ="Your account has been...in this amount ";
     private String balanceMessage = "Your remaining Balance is...";
     private String accountChoice = "Please choose an account, to pick savings enter 1, to pick checking enter 2, to pick investment enter 3 ";
-    private String accountTransaction = "to Check all balances enter 8, to a debit or credit enter 7, ";
+    private String accountTransaction = "to Check all balances enter 4, to a debit or credit enter 5, ";
     private String exitOrGoback = "Enter 9 to go back to the last options or  0 to exit ";
     private String moneySign = " $";
     private String errorMessage = "Error please try again";
@@ -32,7 +32,7 @@ public class Display {
     public void enterfullNameMessage(){System.out.println(fullName);}
     public void usernameMessage(){System.out.println(usernameMessage);}
     public void userPassswordMessage(){System.out.println(passwordMessage);}
-    public void seconduserPassswordMessage(){System.out.println(secondpasswordMessage);}
+    public void makingATypeOfAccount(){System.out.println(typeOAccount);}
     public void accessGrantedorDeniedMessage(AllEnums.TransactionAprovedorDenied approvedOrDenied){System.out.println(accessGrantedorDenied +approvedOrDenied);}
     public void accountStatusMessage(AllEnums.AccountOpenClosedOrFrozen openClosedOrFrozen){System.out.println(accountHasbeenOpenClosedOrFrozen+openClosedOrFrozen);}
     public void checkAllBanlancesMessage(){System.out.println(checkAllBalanceMessage);}
@@ -41,6 +41,8 @@ public class Display {
     public void accountChoiceDMessage(){System.out.println(accountChoice);}
     public void getAccountTransactionMessage(){System.out.println(accountTransaction);}
     public void getExitOrGobackMessage(){System.out.println(exitOrGoback);}
-   public void ErrorMessage(){System.out.println(errorMessage);}
+    public void ErrorMessage(){System.out.println(errorMessage);}
+    public void startingBalance(){System.out.println(Enterbalance);}
+
    // public void (){System.out.println();}
 }

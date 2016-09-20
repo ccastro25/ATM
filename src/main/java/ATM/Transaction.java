@@ -1,5 +1,10 @@
 package ATM;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import static ATM.AllEnums.*;
+
 /**
  * Created by castro on 9/16/16.
  */
@@ -8,64 +13,55 @@ package ATM;
 public class Transaction {
 
 
-
+    private int transactionID;
+    private TransactionAprovedorDenied transactionAprovedorDenied;
     private double amount;
-    private double balanceAfterTransaction;
-    private static int trantionID;
-    private AllEnums.CreditedOrDebited creditedOrDebited;
-    private AllEnums.TransactionAprovedorDenied approvedorDenied;
 
 
-    public AllEnums.CreditedOrDebited getCreditedOrDebited() {
-        return creditedOrDebited;
-    }
+    public TransactionAprovedorDenied debit(BankAccount bankAccount, double amountToSubtract) {
 
-    public AllEnums.TransactionAprovedorDenied getApprovedorDenied() {
-        return approvedorDenied;
-    }
+        if (amountToSubtract <= bankAccount.getBalance()) {
+            amount = bankAccount.getBalance() - amountToSubtract;
+            bankAccount.setBalance(amount);
+            transactionAprovedorDenied = TransactionAprovedorDenied.APPROVED;
+        } else {
+            transactionAprovedorDenied = TransactionAprovedorDenied.DENIED;
+        }
 
-    public Transaction(double amount, AllEnums.CreditedOrDebited creditedOrDebited){
-
-    this.amount = amount;
-    this.creditedOrDebited = creditedOrDebited;
-
-}
-
-    public double getAccount() {
-        return amount;
-    }
-
-    public void setAccount(int account) {
-        this.amount = account;
-    }
-
-    public int getTrantionID() {
-        return trantionID;
-    }
-
-    public void setTrantionID(int trantionID) {
-        this.trantionID = trantionID;
+        return transactionAprovedorDenied;
     }
 
 
-public AllEnums.TransactionAprovedorDenied debit(){
-
-    return null;
-
-}
+    public AllEnums.TransactionAprovedorDenied credit(BankAccount bankAccount, double amountToAdd) {
 
 
-public AllEnums.TransactionAprovedorDenied credit(){
+        if ((amountToAdd > 0) & (bankAccount.getBalance() >= amountToAdd)) {
+
+            amountToAdd = bankAccount.getBalance() + amountToAdd;
+            bankAccount.setBalance(amountToAdd);
+            transactionAprovedorDenied = TransactionAprovedorDenied.APPROVED;
+        } else {
+            transactionAprovedorDenied = TransactionAprovedorDenied.DENIED;
+
+        }
 
 
-    return null;
-}
+        return transactionAprovedorDenied;
+    }
 
-public AllEnums.TransactionAprovedorDenied transfer(){
+    public AllEnums.TransactionAprovedorDenied transfer(BankAccount removeFormbankAccount, BankAccount addTobankAccount, double amount) {
 
 
-    return null;
-}
+        if (debit(removeFormbankAccount, amount) == TransactionAprovedorDenied.APPROVED && amount>0) {
+            debit(removeFormbankAccount, amount);
+            credit(addTobankAccount, amount);
+            transactionAprovedorDenied = TransactionAprovedorDenied.APPROVED;
+        } else {
+            transactionAprovedorDenied = TransactionAprovedorDenied.DENIED;
+        }
+
+        return transactionAprovedorDenied;
+    }
 
 
 }

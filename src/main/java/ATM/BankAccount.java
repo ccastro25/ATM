@@ -31,7 +31,7 @@ public BankAccount(String accountHolderName, AllEnums.AccounType savingCheckingO
     }
 
 
-
+    this.balance= balance;
     this.accountHolderName =accountHolderName;
     this.savingCheckingOrInvesment = savingCheckingOrInvesment;
     accountOpenClosedOrFrozen= AllEnums.AccountOpenClosedOrFrozen.OPEN;

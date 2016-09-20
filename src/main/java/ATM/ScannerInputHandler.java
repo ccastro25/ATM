@@ -14,8 +14,19 @@ public class ScannerInputHandler {
 
     private String userINput;
 
+    private double userDoubleINput;
+
+
+    public double getUserDoubleINput() {
+        return userDoubleINput;
+    }
+
+    public void setUserDoubleINput() {
+        userDoubleINput = scanner.nextDouble();
+    }
 
     public void setUserStringNOSpaces(){
+
      userINput = scanner.next();}
 
 
