@@ -103,11 +103,13 @@ public class Bank {
 
                 case 1:
                     option1CreatingNewAccount();
+                    break;
 
                 case 2:
                     option2GettingAllBalances();
+                    break;
                 case 3:
-
+                    break;
                 case 4:
 
                 case 5:
@@ -159,17 +161,20 @@ BankAccount account;
 
      int count =0;
     int test =accounts.size();
-while(count<2) {
+while(count<test) {
+
  account= (BankAccount)userNameAndAccounts.get(this.fullName).get(count);
+
+
     display.accountInfoandBalance(account.getAccountHolderName(),account.getOpenClosedOrFrozen(),
             account.getBalance(),account.getSavingCheckingOrInvesment(),account.getAccountIntrest() );
     count++;
+System.out.println(count+"  "+test);
 
-    if (count==test){break;}
 }
 
 
-
+viewAccounts();
 
     }
 
