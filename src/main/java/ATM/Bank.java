@@ -21,7 +21,7 @@ public class Bank {
     private double usersDoubleEntry;
     private AccounType accounType;
     private String usersStringInput;
-
+    private ArrayList<Object> accounts = new ArrayList<>();
 
     private Display display = new Display();
 
@@ -32,7 +32,9 @@ public class Bank {
 
         welcomeMessage();
         userNameProcess();
+        usersPassword();
         viewAccounts();
+
 
     }
 
@@ -41,7 +43,7 @@ public class Bank {
         display.enterfullNameMessage();
         scannerInputHandler.setUserStringCanHaveSpaces();
         this.fullName = scannerInputHandler.getUserINput();
-        createAccounts(this.fullName,AccounType.SAVING,100);
+
     }
 
     public void userNameProcess() {
@@ -68,13 +70,16 @@ public class Bank {
 
 
     public void createLinkToAccountsAndUser(BankAccount account)
-    {ArrayList<Object> accounts = new ArrayList<>();
+    {
 
         if (userNameAndAccounts.containsKey(fullName)) {
             accounts.add(account);}
         else {accounts.add(account);
             userNameAndAccounts.put(fullName,accounts);}
-        viewAccounts();
+
+            display.accessGrantedorDeniedMessage(TransactionAprovedorDenied.APPROVED);
+            viewAccounts();
+
     }
 
     public void viewAccounts() {
@@ -97,18 +102,10 @@ public class Bank {
                     System.exit(0);
 
                 case 1:
-                    display.makingATypeOfAccount();
-                    scannerInputHandler.setUserDoubleINput();
-                    checkingSavingOrInvestementAccount= choosingAcountType(scannerInputHandler.getUserDoubleINput());
-                    createAccounts(this.fullName,checkingSavingOrInvestementAccount,100);
-                    display.startingBalance();
-                    scannerInputHandler.setUserDoubleINput();
-                    usersDoubleEntry = scannerInputHandler.getUserDoubleINput();
-                    createAccounts(fullName,accounType, usersDoubleEntry);
-
+                    option1CreatingNewAccount();
 
                 case 2:
-
+                    option2GettingAllBalances();
                 case 3:
 
                 case 4:
@@ -129,23 +126,62 @@ public class Bank {
 
 
     public AccounType choosingAcountType(double accountType){
-
-
-
-             if(accountType==1){
+            if(accountType==1){
                 checkingSavingOrInvestementAccount = AccounType.SAVING;}
            else if (accountType ==2){
                 checkingSavingOrInvestementAccount = AccounType.CHECKING;}
             else if(accountType ==3){
                 checkingSavingOrInvestementAccount = AccounType.INVESTMENT;}
+        return checkingSavingOrInvestementAccount;}
 
+public double startingBalance(){
+    display.startingBalance();
+    scannerInputHandler.setUserDoubleINput();
+    return scannerInputHandler.getUserDoubleINput();
+}
 
-
-
-    return checkingSavingOrInvestementAccount;}
+public void option1CreatingNewAccount(){
+    display.makingATypeOfAccount();
+    scannerInputHandler.setUserDoubleINput();
+    checkingSavingOrInvestementAccount= choosingAcountType(scannerInputHandler.getUserDoubleINput());
+    createAccounts(this.fullName,checkingSavingOrInvestementAccount,startingBalance());
+    display.startingBalance();
+    scannerInputHandler.setUserDoubleINput();
+    usersDoubleEntry = scannerInputHandler.getUserDoubleINput();
+    createAccounts(fullName,accounType, usersDoubleEntry);
 
 
 }
+
+public void option2GettingAllBalances(){
+BankAccount account;
+
+
+     int count =0;
+    int test =accounts.size();
+while(count<2) {
+ account= (BankAccount)userNameAndAccounts.get(this.fullName).get(count);
+    display.accountInfoandBalance(account.getAccountHolderName(),account.getOpenClosedOrFrozen(),
+            account.getBalance(),account.getSavingCheckingOrInvesment(),account.getAccountIntrest() );
+    count++;
+
+    if (count==test){break;}
+}
+
+
+
+
+    }
+
+
+
+
+}
+
+
+
+
+
 
 
 

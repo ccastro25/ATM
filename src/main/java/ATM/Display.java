@@ -14,13 +14,13 @@ public class Display {
     private String passwordMessage = "Please enter your Password ";
     private String typeOAccount = "what type of account would you like make. for saving enter 1, for checking enter 2 and enter 3 for Investment.";
     private String Enterbalance = "Enter your starting amount? ";
-    private String accessGrantedorDenied ="your acces has been ";
+    private String accessGrantedorDenied ="your access has been ";
     private String accountHasbeenOpenClosedOrFrozen = "Your account has been...";
-    private String checkAllBalanceMessage = "to Check all of your Accounts enter 6";
-    private String transactionTypeMessage ="Your account has been...in this amount ";
+
+    private String transactionTypeMessage ="Your account ";
     private String balanceMessage = "Your remaining Balance is...";
-    private String accountChoice = "Please choose an account, to pick savings enter 1, to pick checking enter 2, to pick investment enter 3 ";
-    private String accountTransaction = "to Check all balances enter 4, to a debit or credit enter 5, ";
+    private String accountChoice = "To add a new account enter 1 ";
+    private String accountTransaction = "to Check all balances enter 2, to a debit or credit enter 3, ";
     private String exitOrGoback = "Enter 9 to go back to the last options or  0 to exit ";
     private String moneySign = " $";
     private String errorMessage = "Error please try again";
@@ -35,7 +35,7 @@ public class Display {
     public void makingATypeOfAccount(){System.out.println(typeOAccount);}
     public void accessGrantedorDeniedMessage(AllEnums.TransactionAprovedorDenied approvedOrDenied){System.out.println(accessGrantedorDenied +approvedOrDenied);}
     public void accountStatusMessage(AllEnums.AccountOpenClosedOrFrozen openClosedOrFrozen){System.out.println(accountHasbeenOpenClosedOrFrozen+openClosedOrFrozen);}
-    public void checkAllBanlancesMessage(){System.out.println(checkAllBalanceMessage);}
+    public void checkAllBanlancesMessage(){System.out.println();}
     public void AcountHasBeenDebitedOrCreditedMessage(AllEnums.CreditedOrDebited creditedOrDebited, double amount){System.out.println(transactionTypeMessage+creditedOrDebited+moneySign+amount);}
     public void BalanceMessage(double amount){System.out.println(balanceMessage+moneySign+amount);}
     public void accountChoiceDMessage(){System.out.println(accountChoice);}
@@ -43,6 +43,14 @@ public class Display {
     public void getExitOrGobackMessage(){System.out.println(exitOrGoback);}
     public void ErrorMessage(){System.out.println(errorMessage);}
     public void startingBalance(){System.out.println(Enterbalance);}
+    public void accountInfoandBalance(){}
+
+
+    public void accountInfoandBalance(String name, AllEnums.AccountOpenClosedOrFrozen openClosedOrFrozen,
+                          double intrest, AllEnums.AccounType savngCheckingOrIntrest,double balance){
+        System.out.println("Account holder: "+name +" your "+savngCheckingOrIntrest+" contains "+balance+ " and the account is: "+ openClosedOrFrozen +" and youre interest is: "
+        +intrest);
+    }
 
    // public void (){System.out.println();}
 }

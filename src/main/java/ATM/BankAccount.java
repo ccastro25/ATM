@@ -17,18 +17,27 @@ public class BankAccount{
     private double investmentIntrestRate = 2.1;
     private double accountIntrest;
 
-
-public BankAccount(String accountHolderName, AllEnums.AccounType savingCheckingOrInvesment, double balance){
-
-    switch (savingCheckingOrInvesment){
-
-        case SAVING:
-            accountIntrest= savingIntrestRate;
-        case CHECKING:
-           accountIntrest =checkingIntrestRate;
-        case INVESTMENT:
-            accountIntrest= investmentIntrestRate;
+    public AllEnums.AccounType getSavingCheckingOrInvesment() {
+        return savingCheckingOrInvesment;
     }
+
+    public void setSavingCheckingOrInvesment(AllEnums.AccounType savingCheckingOrInvesment) {
+        this.savingCheckingOrInvesment = savingCheckingOrInvesment;
+    }
+
+    public BankAccount(String accountHolderName, AllEnums.AccounType savingCheckingOrInvesment, double balance){
+
+    if (savingCheckingOrInvesment.equals(AllEnums.AccounType.SAVING))
+        {accountIntrest= savingIntrestRate;
+            savingCheckingOrInvesment = AllEnums.AccounType.SAVING;}
+
+            else if( savingCheckingOrInvesment.equals(AllEnums.AccounType.CHECKING))
+       { accountIntrest =checkingIntrestRate;
+            savingCheckingOrInvesment = AllEnums.AccounType.CHECKING;}
+
+          else if (savingCheckingOrInvesment.equals(AllEnums.AccounType.SAVING))
+         { accountIntrest= investmentIntrestRate;
+             savingCheckingOrInvesment = AllEnums.AccounType.INVESTMENT;}
 
 
     this.balance= balance;
